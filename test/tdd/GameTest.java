@@ -49,6 +49,13 @@ class GameTest {
 		assertEquals(18, game.score());
 	}
 	
+	@Test
+	void test_strike() {
+		game.nbLancers(1,10);
+		game.strike(3, 4);
+		game.nbLancers(16,0);
+		assertEquals(24, game.score());
+	}
 
 	
 

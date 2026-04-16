@@ -22,4 +22,8 @@ public class Game {
 	void spare(int nbQuilles) {
 		score+=2*nbQuilles;
 	}
+	
+	void strike(int nbQuillesTour1, int nbQuillesTour2) {
+		score+=2*nbQuillesTour1+2*nbQuillesTour2;
+	}
 }
