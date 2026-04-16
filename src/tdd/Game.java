@@ -18,4 +18,8 @@ public class Game {
 			roll(nbQuilles);
 		}
 	}
+	
+	void spare(int nbQuilles) {
+		score+=2*nbQuilles;
+	}
 }

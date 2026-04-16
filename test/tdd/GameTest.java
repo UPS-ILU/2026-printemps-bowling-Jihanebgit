@@ -9,7 +9,7 @@ class GameTest {
 
 	Game game;
 	@BeforeEach
-	void init() {
+	void setup() {
 		game=new Game();
 	}
 	
@@ -26,7 +26,7 @@ class GameTest {
 		game.nbLancers(20, 1);
 		assertEquals(20, game.score());
 		
-		//noueau jeu
+		//nouveau jeu
 		game.score=0;
 		
 		//10 roll de 1 + 10 roll de 2
@@ -35,6 +35,18 @@ class GameTest {
 		
 		assertEquals(30, game.score());
 		
+	}
+	
+	@Test
+	void test_spare() {
+		//spare
+		game.nbLancers(1,7);
+		game.nbLancers(1,3);
+		//bonus
+		game.spare(4);
+		//autres tour
+		game.nbLancers(17,0);
+		assertEquals(18, game.score());
 	}
 	
 
