@@ -26,4 +26,5 @@ public class Game {
 	void strike(int nbQuillesTour1, int nbQuillesTour2) {
 		score+=2*nbQuillesTour1+2*nbQuillesTour2;
 	}
+	
 }

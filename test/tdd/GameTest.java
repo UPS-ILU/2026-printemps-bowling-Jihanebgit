@@ -56,6 +56,43 @@ class GameTest {
 		game.nbLancers(16,0);
 		assertEquals(24, game.score());
 	}
+	
+	@Test 
+	void test_casGeneral() {
+		int nbLancer=19;
+		while (nbLancer>19) {
+			
+		}
+		game.roll(1);
+		game.roll(2);
+		
+		game.roll(10); //strike 
+		
+		game.strike(0, 10); //spare
+		
+		game.spare(4);
+		game.roll(2);
+		
+		game.roll(0);
+		game.roll(10); //spare
+		
+		game.spare(6);
+		game.roll(2);
+	
+		game.roll(0);
+		game.roll(10); //spare
+		
+		game.spare(6);
+		game.roll(4); //spare
+		
+		game.spare(8);
+		game.roll(2);//spare
+		
+		game.spare(2);
+		game.roll(7);
+		
+		assertEquals(122, game.score());
+	}
 
 	
 
