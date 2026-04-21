@@ -116,5 +116,10 @@ class GameTest {
 		assertEquals(131, game.score());
 	}
 	
+	@Test
+	void test_genie() {
+		nbLancers(10, 12);
+		assertEquals(300, game.score());
+	}
 
 }
