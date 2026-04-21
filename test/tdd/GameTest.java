@@ -43,7 +43,7 @@ class GameTest {
 		
 	
 	@Test
-	void test_Niveau2() {
+	void test_spare() {
 		game.roll(7);
 		game.roll(3); //spare
 		game.roll(4);
@@ -51,7 +51,14 @@ class GameTest {
 		assertEquals(18, game.score());
 	}
 	
-	
+	@Test
+	void test_strike() {
+		game.roll(10);
+		game.roll(3);
+		game.roll(4);
+		nbLancers(0, 16);
+		assertEquals(24, game.score());
+	}
 	
 	
 	void nbLancers(int nbQuilles, int n) {
