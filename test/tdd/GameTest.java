@@ -14,10 +14,17 @@ class GameTest {
 		game= new Game();
 	}
 
+	void nbLancers(int nbQuilles, int n) {
+		for (int i=0; i<n;i++) {
+			game.roll(nbQuilles);
+		}
+	}
+	
 	@Test
 	void test_cas_vide() {
 		assertEquals(0, game.score());
 	}
+	
 	@Test
 	void test_toutZero() {
 		//cas 20 lancers de 0
@@ -60,11 +67,30 @@ class GameTest {
 		assertEquals(24, game.score());
 	}
 	
-	
-	void nbLancers(int nbQuilles, int n) {
-		for (int i=0; i<n;i++) {
-			game.roll(nbQuilles);
-		}
+	@Test
+	void test_casGeneral() {
+		game.roll(1);
+		game.roll(2);
+		game.roll(10);
+		game.roll(0);
+		game.roll(10);
+		game.roll(4);
+		game.roll(2);
+		game.roll(0);
+		game.roll(10);
+		game.roll(6);
+		game.roll(2);
+		game.roll(0);
+		game.roll(10);
+		game.roll(6);
+		game.roll(4);
+		game.roll(8);
+		game.roll(2);
+		game.roll(2);
+		game.roll(7);
+		assertEquals(122, game.score());
 	}
+	
+	
 
 }

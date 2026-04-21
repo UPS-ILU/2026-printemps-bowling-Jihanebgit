@@ -1,8 +1,8 @@
 package tdd;
 
 public class Game {
-
-	int rolls[]=new int[20];
+	int nbLancerTotal=21;
+	int rolls[]=new int[nbLancerTotal];
 	int indiceLancers=0;
 	
 	void roll(int nbQuilles) {
@@ -12,13 +12,13 @@ public class Game {
 	int score() {
 		int score=0;
 		int i=0;
-		for (int frame=0; frame <10 ;frame++) {
-			if (rolls[i]+rolls[i+1]==10) { //spare
-				score+= 10 +rolls[i+2];
-				i+=2;
-			}else if(rolls[i]==10){
+		for (int frame=0; frame < (nbLancerTotal/2) ;frame++) {
+			if (rolls[i]==10) { //strike
 				score+=10+rolls[i+1]+rolls[i+2];
 				i+=1;
+			}else if(rolls[i]+rolls[i+1]==10){ //spare
+				score+= 10 +rolls[i+2];
+				i+=2;
 			}
 			else{
 				score+=rolls[i]+rolls[i+1];
